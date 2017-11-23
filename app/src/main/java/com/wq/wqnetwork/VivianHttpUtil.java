@@ -1,6 +1,5 @@
 package com.wq.wqnetwork;
 
-import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
