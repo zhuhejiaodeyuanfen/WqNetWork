@@ -1,8 +1,7 @@
 package com.wq.wqnetwork.response;
 
-import android.util.Log;
-
 import com.wq.wqnetwork.VivianHttpUtil;
+import com.wq.wqnetwork.util.NetWorkLogUtil;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -78,7 +77,8 @@ public class RoNetWorkUtil {
 
                     @Override
                     public void onNext(String s) {
-                        Log.i("doGetUrl2", "获得返回结果" + s);
+                        NetWorkLogUtil.i(s);
+
                         responseCallBack.onSuccess(s);
                         onCompleted();
 

@@ -3,11 +3,13 @@ package com.wq.wqnetwork;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.wq.wqnetwork.bean.UserBean;
 import com.wq.wqnetwork.constants.VivianUrls;
 import com.wq.wqnetwork.response.ResponseCallBack;
 import com.wq.wqnetwork.response.RoNetWorkUtil;
-import com.wq.wqnetwork.testbean.BaiduBean1;
 import com.wq.wqnetwork.util.NetWorkLogUtil;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,13 +19,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         RoNetWorkUtil
                 .getInstance()
-                .get(VivianUrls.TEST_URL1)
+                .get(VivianUrls.TEST_GET_ALL_USER)
                 .params("")
-                .execute(new ResponseCallBack<BaiduBean1>() {
+                .execute(new ResponseCallBack<UserBean>() {
                     @Override
-                    public void onResponseSuccess(BaiduBean1 response) {
+                    public void onResponseSuccess(UserBean response) {
 
-                        NetWorkLogUtil.i(response.getCopyrights());
                     }
                 });
     }
